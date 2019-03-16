@@ -20,13 +20,74 @@
                 </div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    @if(count($lists) > 0)
+                        <table class="list-table">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            #
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            Task
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            Type
+                                        </strong>
+                                    </td>
+                                    <td >
+                                        <strong>
+                                            Description
+                                        </strong>
+                                    </td>
+                                    <td >
+                                        <strong>
+                                            Options
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($lists as $key => $list )
+                                    <tr>
+                                        <td>
+                                            {{$key + 1}}
+                                        </td>
+                                        <td>
+                                            {{$list->task}}
+                                        </td>
+                                        <td>
+                                            {{$list->type}}
+                                        </td>
+                                        <td>
+                                            {{$list->description}}
+                                        </td>
+                                        <td>
+                                            <a href="/create-item/{{$list->id}}"
+                                                style="
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-weight: bold;
+                                                    background: red;
+                                                    padding: 10px;
+                                                "
+                                            >
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @else
+                        <strong>
+                            No Data...
+                        </strong>
                     @endif
-
-                    You are logged in!
                 </div>
             </div>
         </div>

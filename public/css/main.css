@@ -48,3 +48,53 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
+
+.form-container {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.form-item {
+    padding: 20px;
+}
+
+.form-item > input {
+    width: 100%;
+}
+
+.form-item > select {
+    width: 100%;
+}
+
+.form-item > button {
+    background: green;
+    border: none;
+    width: 200px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.list-table tr td {
+    border: 1px solid;
+}
+
+.list-table {
+    width: 100%;
+}
+
+.list-table > thead > tr > td {
+    padding: 10px;
+    font-weight: bold;
+    background: silver;
+    color: white;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.list-table > tbody > tr > td {
+    padding: 10px;
+    text-align: center;
+}
+
