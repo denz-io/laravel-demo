@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Lists;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', ['lists' => Lists::get()->all()]);
+        return view('home', ['lists' => Lists::where('user_id', Auth::user()->id)->get()]);
     }
 }

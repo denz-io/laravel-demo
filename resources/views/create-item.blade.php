@@ -13,6 +13,7 @@
                     <div class="form-container">
                         <form action="/create-item" method="POST">
                             @csrf
+                            <input value="{{Auth::user()->id}}" name="user_id" type="hidden" required/>
                             <div class="form-item">
                                 <input placeholder="Task" name="task" type="text" required/>
                             </div>
